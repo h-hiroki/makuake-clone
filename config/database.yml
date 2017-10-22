@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: makuake-clone_production
-  username: makuake-clone
+  username: root
   password: <%= ENV['MAKUAKE-CLONE_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
