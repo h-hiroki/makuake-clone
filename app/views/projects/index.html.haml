@@ -1,1 +1,14 @@
-hello world
+.header
+  .inbox
+    = link_to root_path do
+      = image_tag("makuake-logo.png", class: "inbox__logo")
+
+    .search__form
+      = form_tag(root_path, method: :get) do
+        %input.search__form__box{name: "title"}
+        %label
+          %input.search__form__btn{type: "submit", value: "探す"}
+          %i.search__form__btn-image{class: "fa fa-search faa-ring animated"}
+
+    .inbox__icon
+
