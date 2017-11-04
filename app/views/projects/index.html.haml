@@ -1,14 +1,29 @@
 .header
-  .inbox
+  %header#headerIn
     = link_to root_path do
-      = image_tag("makuake-logo.png", class: "inbox__logo")
+      = image_tag("makuake-logo.png", class: "makuake__logo")
 
     .search__form
       = form_tag(root_path, method: :get) do
         %input.search__form__box{name: "title"}
         %label
           %input.search__form__btn{type: "submit", value: "探す"}
-          %i.search__form__btn-image{class: "fa fa-search faa-ring animated"}
+          %i.search__form__btn__image{class: "fa fa-search faa-ring animated"}
 
-    .inbox__icon
+    %nav#navigation
+      %ul.nav__header__box
+        %li
+          = link_to "プロジェクトを掲載する", root_path, class: "nav__header__box__link__apply"
+        %li
+          .nav__header__like__box
+            = link_to root_path do
+              %i.nav__header__like__box__heart{class: "fa fa-heart-o faa-pulse animated"} お気に入り
+        %li
+          = link_to "ログイン", root_path, class: "nav__header__box__btn__login"
+        %li
+          = link_to "新規登録", root_path, class: "nav__header__box__btn__signin"
+
+
+
+
 
