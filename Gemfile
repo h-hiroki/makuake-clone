@@ -38,6 +38,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'haml-rails'
 gem 'erb2haml'
 gem 'font-awesome-rails'
+gem 'bootstrap-sass'
+
 
 group :production do
   gem 'unicorn'

@@ -1,28 +1,102 @@
-.header
-  %header#headerIn
-    = link_to root_path do
-      = image_tag("makuake-logo.png", class: "makuake__logo")
+= render partial: "header"
 
-    .search__form
-      = form_tag(root_path, method: :get) do
-        %input.search__form__box{name: "title"}
-        %label
-          %input.search__form__btn{type: "submit", value: "探す"}
-          %i.search__form__btn__image{class: "fa fa-search faa-ring animated"}
-
-    %nav#navigation
-      %ul.nav__header__box
-        %li
-          = link_to "プロジェクトを掲載する", root_path, class: "nav__header__box__link__apply"
-        %li
-          .nav__header__like__box
-            = link_to root_path do
-              %i.nav__header__like__box__heart{class: "fa fa-heart-o faa-pulse animated"} お気に入り
-        %li
-          = link_to "ログイン", root_path, class: "nav__header__box__btn__login"
-        %li
-          = link_to "新規登録", root_path, class: "nav__header__box__btn__signin"
-
+/ .main
+/   #carousel-example.carousel.slide{data: {ride: "carousel"}}
+/     .main__under-bar
+/       .carousel-indicators
+/         = link_to "", class: "content__box" do
+/           .content__box-background
+/           = image_tag("hero_thumb.png", class: "content__box-image", data: {target: "#carousel-example",slide_to: "0"})
+/         = link_to "", class: "content__box" do
+/           .content__box-background
+/           = image_tag("hero_thumb.png", class: "content__box-image", data: {target: "#carousel-example",slide_to: "1"})
+/         = link_to "", class: "content__box" do
+/           .content__box-background
+/           = image_tag("hero_thumb.png", class: "content__box-image", data: {target: "#carousel-example",slide_to: "2"})
+/         = link_to "", class: "content__box" do
+/           .content__box-background
+/           = image_tag("hero_thumb.png", class: "content__box-image", data: {target: "#carousel-example",slide_to: "3"})
+/         = link_to "", class: "content__box" do
+/           .content__box-background
+/           = image_tag("hero_thumb.png", class: "content__box-image", data: {target: "#carousel-example",slide_to: "4"})
+/         = link_to "", class: "content__box" do
+/           .content__box-background
+/           = image_tag("hero_thumb.png", class: "content__box-image", data: {target: "#carousel-example",slide_to: "5"})
+/         = link_to "", class: "content__box" do
+/           .content__box-background
+/           = image_tag("hero_thumb.png", class: "content__box-image", data: {target: "#carousel-example",slide_to: "6"})
+/         = link_to "", class: "content__box" do
+/           .content__box-background
+/           = image_tag("hero_thumb.png", class: "content__box-image", data: {target: "#carousel-example",slide_to: "7"})
+/     .carousel-inner
+/       .item.active
+/         = image_tag("hero_thumb.png", class: "full__width")
+/         .carousel-caption
+/           = link_to "/", class: "slider__box" do
+/             = image_tag("hero_thumb.png", class: "slider__image")
+/         .carousel-caption
+/           = link_to "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか","/", class: "slider__text"
+/           = link_to "view", "/", class: "view__btn"
+/       .item
+/         = image_tag("hero_thumb.png", class: "full__width")
+/         .carousel-caption
+/           = link_to "/", class: "slider__box" do
+/             = image_tag("hero_thumb.png", class: "slider__image")
+/         .carousel-caption
+/           = link_to "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか","/", class: "slider__text"
+/           = link_to "view", "/", class: "view__btn"
+/       .item
+/         = image_tag("hero_thumb.png", class: "full__width")
+/         .carousel-caption
+/           = link_to "/", class: "slider__box" do
+/             = image_tag("hero_thumb.png", class: "slider__image")
+/         .carousel-caption
+/           = link_to "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか","/", class: "slider__text"
+/           = link_to "view", "/", class: "view__btn"
+/       .item
+/         = image_tag("hero_thumb.png", class: "full__width")
+/         .carousel-caption
+/           = link_to "/", class: "slider__box" do
+/             = image_tag("hero_thumb.png", class: "slider__image")
+/         .carousel-caption
+/           = link_to "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか","/", class: "slider__text"
+/           = link_to "view", "/", class: "view__btn"
+/       .item
+/         = image_tag("hero_thumb.png", class: "full__width")
+/         .carousel-caption
+/           = link_to "/", class: "slider__box" do
+/             = image_tag("hero_thumb.png", class: "slider__image")
+/         .carousel-caption
+/           = link_to "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか","/", class: "slider__text"
+/           = link_to "view", "/", class: "view__btn"
+/       .item
+/         = image_tag("hero_thumb.png", class: "full__width")
+/         .carousel-caption
+/           = link_to "/", class: "slider__box" do
+/             = image_tag("hero_thumb.png", class: "slider__image")
+/         .carousel-caption
+/           = link_to "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか","/", class: "slider__text"
+/           = link_to "view", "/", class: "view__btn"
+/       .item
+/         = image_tag("hero_thumb.png", class: "full__width")
+/         .carousel-caption
+/           = link_to "/", class: "slider__box" do
+/             = image_tag("hero_thumb.png", class: "slider__image")
+/         .carousel-caption
+/           = link_to "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか","/", class: "slider__text"
+/           = link_to "view", "/", class: "view__btn"
+/       .item
+/         = image_tag("hero_thumb.png", class: "full__width")
+/         .carousel-caption
+/           = link_to "/", class: "slider__box" do
+/             = image_tag("hero_thumb.png", class: "slider__image")
+/         .carousel-caption
+/           = link_to "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか","/", class: "slider__text"
+/           = link_to "view", "/", class: "view__btn"
+/   .contents
+/     .catch-copy
+/       %h1.catch-copy-top 新たなチャレンジを応援しよう。
+/       %h2.catch-copy-bottom 世の中を良くする新しいチャレンジが毎日続々と登場。
 
 
 
