@@ -1,5 +1,4 @@
 = render partial: "header"
-
 = render partial: "pickup"
 
 .content
@@ -26,23 +25,6 @@
         .project__box__bottom__per
           %p 591%
 
-    .project__box
-      = link_to root_path, class: "project__box__top" do
-        = image_tag("hero_thumb.png", class: "project__box__top__image", size: "310x170")
-        %p 新たなチャレンジを応援しよう。
-
-      .project__box__middle
-        .project__box__middle__time
-          %i.project__box__middle__time__image{class: "fa fa-clock-o"}
-          %p 52日
-        .project__box__middle__money
-          %i.project__box__middle__money__image{class: "fa fa-yen"}
-          %p 1,777,231円
-
-      .project__box__bottom
-        .project__box__bottom__gage
-        .project__box__bottom__per
-          %p 591%
 
     .project__box
       = link_to root_path, class: "project__box__top" do
@@ -169,3 +151,82 @@
         .project__box__bottom__gage
         .project__box__bottom__per
           %p 591%
+
+    .project__box
+      = link_to root_path, class: "project__box__top" do
+        = image_tag("hero_thumb.png", class: "project__box__top__image", size: "310x170")
+        %p 新たなチャレンジを応援しよう。
+
+      .project__box__middle
+        .project__box__middle__time
+          %i.project__box__middle__time__image{class: "fa fa-clock-o"}
+          %p 52日
+        .project__box__middle__money
+          %i.project__box__middle__money__image{class: "fa fa-yen"}
+          %p 1,777,231円
+
+      .project__box__bottom
+        .project__box__bottom__gage
+        .project__box__bottom__per
+          %p 591%
+
+
+
+  .new
+    .new__project
+      = image_tag("new.gif", class: "new__project__icon", size: "32x32")
+      .new__project__title 最近始まったプロジェクト
+
+    .new__project__box
+      .new__project__box__in
+        = image_tag("background_1.jpg", class: "new__project__box__in__image", size: "230x129")
+        = link_to "最近始まりました。オナシャス", root_path, class: "new__project__box__in__text"
+      .new__project__box__in
+        = image_tag("background_1.jpg", class: "new__project__box__in__image", size: "230x129")
+        = link_to "最近始まりました。オナシャス", root_path, class: "new__project__box__in__text"
+      .new__project__box__in
+        = image_tag("background_1.jpg", class: "new__project__box__in__image", size: "230x129")
+        = link_to "最近始まりました。オナシャス", root_path, class: "new__project__box__in__text"
+      .new__project__box__in
+        = image_tag("background_1.jpg", class: "new__project__box__in__image", size: "230x129")
+        = link_to "最近始まりました。オナシャス", root_path, class: "new__project__box__in__text"
+      .new__project__box__in
+        = image_tag("background_1.jpg", class: "new__project__box__in__image", size: "230x129")
+        = link_to "最近始まりました。オナシャス", root_path, class: "new__project__box__in__text"
+      .new__project__box__in
+        = image_tag("background_1.jpg", class: "new__project__box__in__image", size: "230x129")
+        = link_to "最近始まりました。オナシャス", root_path, class: "new__project__box__in__text"
+      .new__project__box__in
+        = image_tag("background_1.jpg", class: "new__project__box__in__image", size: "230x129")
+        = link_to "最近始まりました。オナシャス", root_path, class: "new__project__box__in__text"
+      .new__project__box__in
+        = image_tag("background_1.jpg", class: "new__project__box__in__image", size: "230x129")
+        = link_to "最近始まりました。オナシャス", root_path, class: "new__project__box__in__text"
+
+
+  .sudden__rise
+    .sudden__rise__project
+      = image_tag("sudden_rise.png", class: "sudden__rise__project__icon", size: "32x32")
+      .sudden__rise__project__title 急上昇ランキング
+
+    .sudden__rise__project__box
+      .sudden__rise__project__box__in
+        = image_tag("prod_1.jpg", class: "sudden__rise__project__box__in__image", size: "188x106")
+        = link_to "ドードープスーッドードドプスーッ", root_path, class: "sudden__rise__project__box__in__title"
+        %p.sudden__rise__project__box__in__text テキストテキストテキストテキストテキスト
+      .sudden__rise__project__box__in
+        = image_tag("prod_1.jpg", class: "sudden__rise__project__box__in__image", size: "188x106")
+        = link_to "ドードープスーッドードドプスーッ", root_path, class: "sudden__rise__project__box__in__title"
+        %p.sudden__rise__project__box__in__text テキストテキストテキストテキストテキスト
+      .sudden__rise__project__box__in
+        = image_tag("prod_1.jpg", class: "sudden__rise__project__box__in__image", size: "188x106")
+        = link_to "ドードープスーッドードドプスーッ", root_path, class: "sudden__rise__project__box__in__title"
+        %p.sudden__rise__project__box__in__text テキストテキストテキストテキストテキスト
+      .sudden__rise__project__box__in
+        = image_tag("prod_1.jpg", class: "sudden__rise__project__box__in__image", size: "188x106")
+        = link_to "ドードープスーッドードドプスーッ", root_path, class: "sudden__rise__project__box__in__title"
+        %p.sudden__rise__project__box__in__text テキストテキストテキストテキストテキスト
+      .sudden__rise__project__box__in
+        = image_tag("prod_1.jpg", class: "sudden__rise__project__box__in__image", size: "188x106")
+        = link_to "ドードープスーッドードドプスーッ", root_path, class: "sudden__rise__project__box__in__title"
+        %p.sudden__rise__project__box__in__text テキストテキストテキストテキストテキスト

@@ -1,7 +1,3 @@
-
-
-////////////ここからコンテンツ部
-
 .content {
 
   .catch-copy {
@@ -21,7 +17,7 @@
 
   .project {
     width: 1300px;
-    height: 800px;
+    height: 900px;
     margin: 0 auto;
     margin-left: 230px;
 
@@ -108,6 +104,104 @@
       }
 
     }
+
+  }
+
+  .new{
+    width: 1100px;
+    height: 450px;
+    margin: 0 auto;
+    margin-left: 230px;
+
+
+    &__project{
+      height: 30px;
+      margin-bottom: 15px;
+
+      &__icon{
+        float: left;
+      }
+
+      &__title{
+        float: left;
+        font-size: 23px;
+      }
+
+      &__box {
+        float: left;
+
+        &__in {
+          float: left;
+          height: 200px;
+          width: 230px;
+          margin-right: 25px;
+
+          &__image {
+            border-radius: 3px;
+          }
+
+          &__text {
+            color: #333333;
+            font-size: 14px;
+            line-height: 1.8;
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+  .sudden__rise {
+    width: 1100px;
+    height: 400px;
+    margin: 0 auto;
+    margin-left: 230px;
+
+
+    &__project{
+      height: 40px;
+      margin-bottom: 15px;
+
+      &__icon{
+        float: left;
+      }
+
+      &__title{
+        float: left;
+        font-size: 23px;
+      }
+
+      &__box {
+        float: left;
+
+        &__in {
+          float: left;
+          height: 200px;
+          width: 201px;
+
+          &__image {
+            border-radius: 3px;
+          }
+
+          &__title {
+            color: #333333;
+            font-size: 14px;
+            line-height: 1.8;
+            float: left;
+            width: 188px;
+          }
+
+          &__text {
+            color: #696969;
+          }
+        }
+
+      }
+
+    }
+
 
   }
 
