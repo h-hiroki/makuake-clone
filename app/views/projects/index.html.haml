@@ -1,103 +1,14 @@
 = render partial: "header"
 
-/ .main
-/   #carousel-example.carousel.slide{data: {ride: "carousel"}}
-/     .main__under-bar
-/       .carousel-indicators
-/         = link_to "", class: "content__box" do
-/           .content__box-background
-/           = image_tag("hero_thumb.png", class: "content__box-image", data: {target: "#carousel-example",slide_to: "0"})
-/         = link_to "", class: "content__box" do
-/           .content__box-background
-/           = image_tag("hero_thumb.png", class: "content__box-image", data: {target: "#carousel-example",slide_to: "1"})
-/         = link_to "", class: "content__box" do
-/           .content__box-background
-/           = image_tag("hero_thumb.png", class: "content__box-image", data: {target: "#carousel-example",slide_to: "2"})
-/         = link_to "", class: "content__box" do
-/           .content__box-background
-/           = image_tag("hero_thumb.png", class: "content__box-image", data: {target: "#carousel-example",slide_to: "3"})
-/         = link_to "", class: "content__box" do
-/           .content__box-background
-/           = image_tag("hero_thumb.png", class: "content__box-image", data: {target: "#carousel-example",slide_to: "4"})
-/         = link_to "", class: "content__box" do
-/           .content__box-background
-/           = image_tag("hero_thumb.png", class: "content__box-image", data: {target: "#carousel-example",slide_to: "5"})
-/         = link_to "", class: "content__box" do
-/           .content__box-background
-/           = image_tag("hero_thumb.png", class: "content__box-image", data: {target: "#carousel-example",slide_to: "6"})
-/         = link_to "", class: "content__box" do
-/           .content__box-background
-/           = image_tag("hero_thumb.png", class: "content__box-image", data: {target: "#carousel-example",slide_to: "7"})
-/     .carousel-inner
-/       .item.active
-/         = image_tag("hero_thumb.png", class: "full__width")
-/         .carousel-caption
-/           = link_to "/", class: "slider__box" do
-/             = image_tag("hero_thumb.png", class: "slider__image")
-/         .carousel-caption
-/           = link_to "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか","/", class: "slider__text"
-/           = link_to "view", "/", class: "view__btn"
-/       .item
-/         = image_tag("hero_thumb.png", class: "full__width")
-/         .carousel-caption
-/           = link_to "/", class: "slider__box" do
-/             = image_tag("hero_thumb.png", class: "slider__image")
-/         .carousel-caption
-/           = link_to "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか","/", class: "slider__text"
-/           = link_to "view", "/", class: "view__btn"
-/       .item
-/         = image_tag("hero_thumb.png", class: "full__width")
-/         .carousel-caption
-/           = link_to "/", class: "slider__box" do
-/             = image_tag("hero_thumb.png", class: "slider__image")
-/         .carousel-caption
-/           = link_to "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか","/", class: "slider__text"
-/           = link_to "view", "/", class: "view__btn"
-/       .item
-/         = image_tag("hero_thumb.png", class: "full__width")
-/         .carousel-caption
-/           = link_to "/", class: "slider__box" do
-/             = image_tag("hero_thumb.png", class: "slider__image")
-/         .carousel-caption
-/           = link_to "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか","/", class: "slider__text"
-/           = link_to "view", "/", class: "view__btn"
-/       .item
-/         = image_tag("hero_thumb.png", class: "full__width")
-/         .carousel-caption
-/           = link_to "/", class: "slider__box" do
-/             = image_tag("hero_thumb.png", class: "slider__image")
-/         .carousel-caption
-/           = link_to "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか","/", class: "slider__text"
-/           = link_to "view", "/", class: "view__btn"
-/       .item
-/         = image_tag("hero_thumb.png", class: "full__width")
-/         .carousel-caption
-/           = link_to "/", class: "slider__box" do
-/             = image_tag("hero_thumb.png", class: "slider__image")
-/         .carousel-caption
-/           = link_to "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか","/", class: "slider__text"
-/           = link_to "view", "/", class: "view__btn"
-/       .item
-/         = image_tag("hero_thumb.png", class: "full__width")
-/         .carousel-caption
-/           = link_to "/", class: "slider__box" do
-/             = image_tag("hero_thumb.png", class: "slider__image")
-/         .carousel-caption
-/           = link_to "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか","/", class: "slider__text"
-/           = link_to "view", "/", class: "view__btn"
-/       .item
-/         = image_tag("hero_thumb.png", class: "full__width")
-/         .carousel-caption
-/           = link_to "/", class: "slider__box" do
-/             = image_tag("hero_thumb.png", class: "slider__image")
-/         .carousel-caption
-/           = link_to "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか","/", class: "slider__text"
-/           = link_to "view", "/", class: "view__btn"
-/   .contents
-/     .catch-copy
-/       %h1.catch-copy-top 新たなチャレンジを応援しよう。
-/       %h2.catch-copy-bottom 世の中を良くする新しいチャレンジが毎日続々と登場。
+.pickup
+  = link_to root_path do
+    = image_tag("hero_thumb.png", class: "pickup__image")
+    = image_tag("background_1.jpg", class: "pickup__image__background")
+  .pickup__msg
+    = link_to "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか", root_path, class: "pickup__msg__link"
+    / %h1 Makuakeで「世の中をワクワクさせるようなプロジェクト」を<br>掲載してみませんか
 
+  .pickup__view-btn VIEW
 
 
 
