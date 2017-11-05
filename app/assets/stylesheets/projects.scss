@@ -155,7 +155,7 @@
 
   .sudden__rise {
     width: 1100px;
-    height: 400px;
+    height: 350px;
     margin: 0 auto;
     margin-left: 230px;
 
@@ -202,13 +202,71 @@
 
     }
 
+  }
+
+  .store {
+
+    &__title {
+      width: 100%;
+      text-align: center;
+
+      &__image {
+      margin: 0 auto;
+      }
+
+      &__text {
+        font-size: 18px;
+        margin: 18px 0 36px;
+      }
+    }
+
+    &__prod {
+      width: 1300px;
+      margin-left: 230px;
+      float: left;
+
+      &__box {
+        width: 310px;
+        float: left;
+        margin-right:30px;
+
+        &__top {
+          line-height: 1.6;
+          font-size: 17px;
+          padding: 12px 14px 0;
+          color: #333333;
+        }
+
+        &__top > p {
+          color: #333333;
+        }
+
+        &__bottom {
+          height: 50px;
+          width: 310px;
+          &__stock{
+            color: red;
+            float:left;
+          }
+
+          &__money{
+            float:right;
+
+            &__image{
+              float:left;
+              margin-top: 3px;
+            }
+          }
+
+          &__money > p {
+            float:right;
+
+          }
+
+        }
+      }
+    }
 
   }
 
-
-
 }
-
-
-
-
