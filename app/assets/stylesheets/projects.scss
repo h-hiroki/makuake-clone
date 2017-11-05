@@ -1,0 +1,120 @@
+
+
+////////////ここからコンテンツ部
+
+.content {
+
+  .catch-copy {
+    text-align: center;
+
+    &__top {
+      font-size: 26px;
+      margin: 30px 0 26px 0;
+    }
+
+    &__bottom {
+      font-size: 16px;
+      color: #7f8488;
+    }
+
+  }
+
+  .project {
+    width: 1300px;
+    height: 800px;
+    margin: 0 auto;
+    margin-left: 230px;
+
+
+    &__box {
+      float: left;
+      margin-right: 35px;
+      margin-bottom: 35px;
+
+      &__top {
+        height: 174px;
+        width: 310px;
+      }
+
+      &__top > p {
+        line-height: 1.6;
+        font-size: 17px;
+        padding: 12px 14px 0;
+        color: #333333;
+      }
+
+      &__middle{
+        height: 30px;
+        padding: 0 15px;
+
+        &__time {
+          font-size: 17px;
+          float: left;
+
+          &__image{
+            float: left;
+            margin-top: 3px;
+            margin-right: 8px;
+          }
+
+        }
+
+        &__time > p {
+          float: left;
+
+        }
+
+        &__money {
+          font-size: 17px;
+          float: right;
+
+          &__image{
+            float: left;
+            margin-top: 3px;
+            margin-right: 8px;
+          }
+
+        }
+
+        &__money > p {
+          float: left;
+        }
+
+      }
+
+      &__bottom{
+        float: left;
+
+
+        &__gage {
+          float: left;
+          margin: 0 12px;
+          border-radius: 3px;
+          width: 200px;
+          background-color: #e7e7e7;
+          border-bottom: 2px solid #e7e7e7;
+          background-color: #bbf117;
+          height: 8px;
+          border-radius: 3px;
+          margin-top: 6px;
+        }
+
+        &__per {
+          font-size: 14px;
+          padding: 0 0 0 10px;
+          float:right;
+        }
+
+      }
+
+    }
+
+  }
+
+
+
+}
+
+
+
+
