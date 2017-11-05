@@ -107,7 +107,7 @@
 
   }
 
-  .new{
+  .new {
     width: 1100px;
     height: 450px;
     margin: 0 auto;
@@ -205,6 +205,7 @@
   }
 
   .store {
+    height: 670px;
 
     &__title {
       width: 100%;
@@ -268,5 +269,44 @@
     }
 
   }
+
+  .mk-content{
+    width: 1100px;
+    height: 350px;
+    margin: 0 auto;
+    margin-left: 230px;
+    margin-top: 20px;
+
+    &__project {
+      margin-bottom: 20px;
+
+      &__icon {
+        float:left;
+        margin-top: 5.5px;
+      }
+
+
+      &__title {
+        font-size: 24px;
+      }
+
+      &__box {
+
+        &__in {
+          float:left;
+          margin-right: 30px;
+
+          &__text {
+            padding-top: 10px;
+            text-align: center;
+          }
+        }
+      }
+
+    }
+
+  }
+
+
 
 }
