@@ -1,6 +1,6 @@
 .footer {
   background-color: #ffffff;
-  height: 868px;
+  height: 800px;
   width: 100vw;
   &__box {
     width: 1000px;
@@ -112,11 +112,10 @@
 }
 
 #page-top {
-  // margin-top: -40px;
-  // padding-bottom: 10px;
-  // float: right;
+  width: 50px;
+  float: right;
   position: relative;
-  left:1050px;
+  left: 100px;
   bottom: 70px;
 }
 #page-top a {
