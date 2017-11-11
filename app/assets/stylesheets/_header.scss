@@ -1,0 +1,161 @@
+.header {
+  height: 66px;
+  margin: 0 auto;
+  width: 1000px;
+
+  .header > a {
+    height: 66px;
+    width: 168px;
+    float: left;
+    text-decoration: none;
+    color: #333333;
+  }
+
+  &__logo {
+    margin-top: 17px;
+    float: left;
+  }
+
+}
+
+.search__form {
+  position: relative;
+  float: left;
+  width: 350px;
+  margin: 15px 0 0 18px;
+  font-size: 14px;
+  height: 51px;
+
+  &__box {
+    position: absolute;
+    width: 185px;
+    height: 34px;
+    line-height: 36px;
+    padding: 0 12px;
+    border-top: 1px solid #D3D3D3;
+    border-left: 1px solid #D3D3D3;
+    border-bottom: 1px solid #D3D3D3;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    border-right: none;
+    top: 0;
+    left: 0;
+    margin-left: 30px;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 0;
+    right: 50px;
+    display: block;
+    width: 90px;
+    height: 34px;
+    border: 1px solid #d3d3d3;
+    border-radius: 0 4px 4px 0;
+    background: #fff;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #333333;
+    padding-left: 25px;
+    padding-top: 2px;
+    font-size: 14px;
+
+    &__image {
+      display: block;
+      background-color: transparent;
+      position: absolute;
+      top: 3px;
+      right: 105px;
+      font-size: 20px !important;
+      margin: 5px 0 0 13px;
+      opacity: 0.4;
+    }
+
+  }
+
+  &__btn:hover {
+    background-color: #f7c600;
+    color: #fff;
+    opacity:1;
+  }
+
+  &__btn:hover + .search__form__btn__image {
+    color: #fff;
+    opacity: 1;
+  }
+
+}
+
+.navbar {
+  height: 66px;
+  width: 490px;
+  float: right;
+
+  &__box {
+    list-style: none;
+
+    li {
+      font-size: 14px;
+      text-decoration: none;
+      float: left;
+      padding: 22px 10px;
+      text-decoration: none;
+    }
+
+    &__link__apply {
+      color: #333333;
+    }
+
+    &__fav {
+      color: #333333;
+      &__heart {
+        color: #333333;
+      }
+    }
+
+    &__login {
+      border-radius: 3px;
+      display: block;
+      background: #f7c600;
+      padding: 6px 13px;
+      margin-top: -6px;
+
+      &__text {
+      color: white;
+      font-size: 14px;
+      text-decoration: none;
+      }
+
+      &__text:hover {
+      color: white;
+      font-size: 14px;
+      text-decoration: none;
+      }
+
+    }
+
+    &__signin {
+      border-radius: 3px;
+      border: 1px solid #f7c600;
+      display: block;
+      padding: 6px 13px;
+      margin-top: -6px;
+
+      &__text {
+      color: #f7c600;
+      font-size: 14px;
+      text-decoration: none;
+      }
+
+      &__text:hover {
+        color: #f7c600;
+        text-decoration: none;
+      }
+
+    }
+
+  }
+
+}

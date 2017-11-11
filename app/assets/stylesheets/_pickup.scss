@@ -1,0 +1,57 @@
+.pickup {
+  position: relative;
+
+  &__image {
+    height: 146px;
+    width: 260px;
+    border-radius: 4px;
+    position: absolute;
+    top: 70px;
+    left: 600px;
+
+    &__background {
+      height: 500px;
+      width: 100%;
+    }
+
+  }
+
+  &__msg {
+    font-size: 30px;
+    text-align: center;
+    width: 850px;
+    position: absolute;
+    top: 240px;
+    left: 300px;
+
+    &__link {
+    color: white;
+    }
+
+    &__link:hover {
+    color: white;
+    }
+
+  }
+
+  &__view-btn {
+    height: 45px;
+    width: 120px;
+    position: absolute;
+    top: 390px;
+    left: 665px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 3px;
+    color: #696969;
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+
+  &__view-btn:hover {
+    color: white;
+    background-color: #f7c600;
+  }
+
+}

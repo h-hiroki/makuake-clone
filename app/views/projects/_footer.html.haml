@@ -1,0 +1,60 @@
+.footer
+  .footer__box
+    .top
+      .top__left
+        .top__search
+          .top__search__title プロジェクトを探す
+          .top__search__border
+          %ul.top__search__menu
+            %li
+              = link_to "プロダクト", "/", class: "top__search__menu-list"
+            %li
+              = link_to "ファッション", "/", class: "top__search__menu-list"
+            %li
+              = link_to "フード", "/", class: "top__search__menu-list"
+            %li
+              = link_to "レストラン・バー", "/", class: "top__search__menu-list"
+            %li
+              = link_to "テクノロジー", "/", class: "top__search__menu-list"
+            %li
+              = link_to "more >", "/", class: "top__search__menu-list more-edit"
+        .top__publish
+          .top__search__title プロジェクトを掲載する
+          .top__search__border
+          %ul.top__search__menu
+            %li
+              = link_to "プロジェクト How To", "/", class: "top__search__menu-list"
+          = link_to "/" do
+            = image_tag("footer_bn_apply.png", class: "top__publish-image")
+      .top__center
+        .top__menu
+          .top__search__title MENU
+          .top__search__border
+          = link_to "/" do
+            = image_tag("footer_bn_store.jpg", class: "top__menu-image")
+          %ul.top__search__menu
+            %li
+              = link_to "ヘルプ", "/", class: "top__search__menu-list"
+            %li
+              = link_to "プレスリリース", "/", class: "top__search__menu-list"
+            %li
+              = link_to "お問い合わせ・取材受付", "/", class: "top__search__menu-list"
+      .top__right
+        .top__official
+          .top__search__title オフィシャルアカウント
+          .top__search__border
+          .top__official__makuake
+            = image_tag("facebook_state.png", style: "width:340px")
+          .top__official__facebook
+          = image_tag("tweeter_ac.png", class: "top__official__sns twitter" )
+          = image_tag("line_ac.png", class: "top__official__sns line" )
+          = image_tag("insta_ac.png", class: "top__official__sns instagram" )
+    .bottom
+      .bottom__text Copyright © CyberAgent Crowd Funding, Inc. All Rights Reserved.main__content__catch-copy.
+      = link_to "プライバシーポリシー", "https://www.makuake.com", class: "bottom__text-link"
+      = link_to "利用規約", "https://www.makuake.com", class: "bottom__text-link"
+      = link_to "運営会社", "https://www.makuake.com", class: "bottom__text-link"
+
+    %p{id: "page-top"}
+      %a{href: "#wrap"}
+        = image_tag("goto_top_logo.png")
