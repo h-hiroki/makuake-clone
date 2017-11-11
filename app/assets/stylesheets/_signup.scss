@@ -1,0 +1,133 @@
+// sign_up用のデザイン
+.content__signup{
+  text-align: center;
+  height: 600px;
+  float: center;
+  background-color:whiteSmoke;
+}
+.content__signup > h2{
+  font-size: 24px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.content__signup > a{
+  color: black;
+  padding-bottom: 10px;
+}
+.content__signup > h3{
+  padding-top: 10px;
+}
+
+// log_in用のデザイン
+.content__login{
+  text-align: center;
+  height: 360px;
+  float: center;
+  background-color:whiteSmoke;
+}
+.content__login > h2{
+  font-size: 24px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.content__login > a{
+  color: black;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.content__login > h3{
+  padding-top: 10px;
+}
+
+// 以下は共通デザイン
+.content__left{
+  float:left;
+  width: 250px;
+  height: 200px;
+  margin-left: 250px;
+  margin-right: 100px;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+  &__sns{
+    float: left;
+    padding: 5px;
+  }
+}
+
+.content__right{
+  border-left: solid 1px #949494;
+  float:left;
+  margin-left: 100px;
+  width: 550px;
+  padding-left: 100px;
+  margin-top: 10px;
+
+  &__title {
+    font-size: 18px;
+  }
+  &__name{
+    &__label{
+      height:40px;
+      width: 200px;
+      float:left;
+      margin-top: 20px;
+    }
+    &__form{
+      height:40px;
+      width: 200px;
+      margin-top: -10px;
+    }
+  }
+  &__email{
+    &__label{
+      height:40px;
+      width: 200px;
+      float:left;
+      margin-top: 20px;
+    }
+    &__form{
+      height:40px;
+      width: 200px;
+      margin-top: -10px;
+    }
+  }
+  &__password{
+    &__label{
+      height:40px;
+      width: 200px;
+      float:left;
+      margin-top: 20px;
+    }
+    &__form{
+      height:40px;
+      width: 200px;
+      margin-top: -10px;
+    }
+  }
+  &__btn{
+    margin-top: 20px;
+    margin-left: 260px;
+    background: #f7c600;
+    color: white;
+    height:45px;
+    width:140px;
+    line-height: 1px;
+    border-style: none;
+    font-size: 18px;
+    border-radius: 4px;
+  }
+
+}
+
+.actions > p {
+  font-size: 12px;
+  color:#949494;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.new_user > .field{
+  height:70px;
+}
+

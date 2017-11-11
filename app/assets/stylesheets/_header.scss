@@ -2,6 +2,7 @@
   height: 66px;
   margin: 0 auto;
   width: 1000px;
+  margin-bottom: 20px;
 
   .header > a {
     height: 66px;
@@ -21,7 +22,7 @@
 .search__form {
   position: relative;
   float: left;
-  width: 350px;
+  width: 330px;
   margin: 15px 0 0 18px;
   font-size: 14px;
   height: 51px;
@@ -90,7 +91,7 @@
 
 .navbar {
   height: 66px;
-  width: 490px;
+  width: 500px;
   float: right;
 
   &__box {
