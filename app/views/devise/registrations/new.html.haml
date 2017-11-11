@@ -1,43 +1,43 @@
 = render "projects/header"
 
-.content__top
+.content__signup
   %h2 会員登録
   = render "devise/shared/links"
   %h3 ＼約1分で登録でき、Makuakeを楽しめます!／
 
-.content__left
-  %h3 SNSで登録
-  = image_tag("facebook.png", class: "content__left__sns" )
-  = image_tag("twitter.png",  class: "content__left__sns" )
-  = image_tag("line.png",     class: "content__left__sns" )
-  = image_tag("ameba.png",    class: "content__left__sns" )
+  .content__left
+    %h3 SNSで登録
+    = image_tag("facebook.png", class: "content__left__sns" )
+    = image_tag("twitter.png",  class: "content__left__sns" )
+    = image_tag("line.png",     class: "content__left__sns" )
+    = image_tag("ameba.png",    class: "content__left__sns" )
 
-.content__right
-  .content__right__title メールアドレスで新規登録
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = devise_error_messages!
-    .field
-      = f.label :"ユーザー名", class: "content__right__name__label"
-      %br/
-      = f.text_field :name, autofocus: true, class: "content__right__name__form"
-    .field
-      = f.label :"メールアドレス", class: "content__right__email__label"
-      %br/
-      = f.email_field :email,  class: "content__right__email__form"
-    .field
-      = f.label :"パスワード(6文字以上)", class: "content__right__password__label"
-      / - if @minimum_password_length
-      /   %em
-      /     (#{@minimum_password_length} 文字以上)
-      %br/
-      = f.password_field :password, autocomplete: "off", class: "content__right__password__form"
-    .field
-      = f.label :"確認", class: "content__right__password__label"
-      %br/
-      = f.password_field :password_confirmation, autocomplete: "off" , class: "content__right__password__form"
-    .actions
-      %p ※makuake.comからのメールアドレスが受信拒否設定に含まれていないか<br>ご確認ください。
-      %p ※Makuakeからのメールマガジン／各種お知らせをお送りさせていただきます。（不要な場合は登録後に解除できます。）
-      = f.submit "OK" ,class: "content__right__btn"
+  .content__right
+    .content__right__title メールアドレスで新規登録
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      .field
+        = f.label :"ユーザー名", class: "content__right__name__label"
+        %br/
+        = f.text_field :name, autofocus: true, class: "content__right__name__form"
+      .field
+        = f.label :"メールアドレス", class: "content__right__email__label"
+        %br/
+        = f.email_field :email,  class: "content__right__email__form"
+      .field
+        = f.label :"パスワード(6文字以上)", class: "content__right__password__label"
+        / - if @minimum_password_length
+        /   %em
+        /     (#{@minimum_password_length} 文字以上)
+        %br/
+        = f.password_field :password, autocomplete: "off", class: "content__right__password__form"
+      .field
+        = f.label :"確認", class: "content__right__password__label"
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "off" , class: "content__right__password__form"
+      .actions
+        %p ※makuake.comからのメールアドレスが受信拒否設定に含まれていないか<br>ご確認ください。
+        %p ※Makuakeからのメールマガジン／各種お知らせをお送りさせていただきます。（不要な場合は登録後に解除できます。）
+        = f.submit "OK" ,class: "content__right__btn"
 
 = render "projects/footer"

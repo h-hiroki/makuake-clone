@@ -12,14 +12,14 @@
   .navbar
     %ul.navbar__box
       %li
-        = link_to "プロジェクトを掲載する", root_path, class: "navbar__box__link__apply"
+        = link_to "プロジェクトを掲載する", destroy_user_session_path, class: "navbar__box__link__apply"
       %li
         .navbar__box__fav
           = link_to root_path do
             %i.navbar__box__fav__heart{class: "fa fa-heart-o faa-pulse animated"} お気に入り
       %li
         .navbar__box__login
-          = link_to "ログイン", destroy_user_session_path, class: "navbar__box__login__text"
+          = link_to "ログイン", new_user_session_path, class: "navbar__box__login__text"
       %li
         .navbar__box__signin
           = link_to "新規登録", new_user_registration_path, class: "navbar__box__signin__text"
