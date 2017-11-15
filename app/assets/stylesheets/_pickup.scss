@@ -6,8 +6,11 @@
     width: 260px;
     border-radius: 4px;
     position: absolute;
-    top: 70px;
-    left: 600px;
+    top: 0;
+    bottom: 250px;
+    left: 0;
+    right: 0;
+    margin: auto auto;
 
     &__background {
       height: 500px;
@@ -19,10 +22,13 @@
   &__msg {
     font-size: 30px;
     text-align: center;
-    width: 850px;
     position: absolute;
-    top: 240px;
-    left: 300px;
+    top: 250px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto auto;
+
 
     &__link {
     color: white;
@@ -38,8 +44,11 @@
     height: 45px;
     width: 120px;
     position: absolute;
-    top: 390px;
-    left: 665px;
+    top: 250px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto auto;
     font-size: 16px;
     text-align: center;
     line-height: 45px;
