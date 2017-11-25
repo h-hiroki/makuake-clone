@@ -13,7 +13,7 @@
     .navbar__signed
       %ul.navbar__signed__box
         %li
-          = link_to "プロジェクトを掲載する", class: "navbar__signed__box__link__apply"
+          = link_to  "プロジェクトを掲載する", new_project_path, class: "navbar__signed__box__link__apply"
         %li
           .navbar__signed__box__fav
             = link_to root_path do
@@ -39,7 +39,7 @@
     .navbar
       %ul.navbar__box
         %li
-          = link_to "プロジェクトを掲載する", class: "navbar__box__link__apply"
+          = link_to "プロジェクトを掲載する", new_project_path, class: "navbar__box__link__apply"
         %li
           .navbar__box__fav
             = link_to root_path do

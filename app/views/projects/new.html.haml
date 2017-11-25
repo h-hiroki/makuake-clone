@@ -1,0 +1,113 @@
+= render partial: "header"
+.post__view
+  .post
+    %h1.post__title プロジェクト投稿
+    %p.post__copy こんな感じの画面で投稿するのでしょうか。想像で作っています。
+    %p.post__copy{style: "color: red; font-size: 24px;"} データ登録機能は工事中です！
+    %p.post__copy{style: "color: red; font-size: 24px;"} 投稿するボタンを押しても動きません。
+  .post__form
+    = form_for (@project), url: projects_path do |f|
+      .post__form__project
+        .post__form__project-border
+        %p.post__copy まず、下記に企画内容を入力しましょう。
+        %p.post__copy 全項目入力必須です。魅力たっぷりのあなたの企画をアピールしましょう。
+        .post__form__project-border
+      .newproject__post__area
+        .post__field
+          .post__field__text 企画タイトル
+          = f.text_field :title, class: 'post__field__box form-short', placeholder: '例）50文字以内', maxlength: "50"
+        - if @project.errors.full_messages_for(:title).any?
+          .post__error メインタイトルを入力してください。
+        .post__field
+          .post__field__text 目標金額
+          = f.text_field :target_fig, class: 'post__field__box form-short', placeholder: '例）210000', maxlength: "7"
+        - if @project.errors.full_messages_for(:target_fig).any?
+          .post__error 目標金額を入力してください。
+        .post__field
+          .post__field__text 期日
+          = f.text_field :end_time, class: 'post__field__box form-short', placeholder: '例）2017-03-22'
+        - if @project.errors.full_messages_for(:end_time).any?
+          .post__error 期日を入力してください。
+        .post__field
+          .post__field__text メインイメージ
+          .input-file
+            = f.file_field :image, class: "input-file" do
+              %span 選択されていません
+        - if @project.errors.full_messages_for(:image).any?
+          .post__error__image メインイメージを選択してください。
+      / .btn__area__newproject
+      /   .title__btn__area
+      /     %i.title__plus#title__plus{class: "fa fa-plus-square-o", style:"font-size:22px"}
+      /       .title__plus-text タイトルを追加する
+      /     %i.title__minus#title__minus{class: "fa fa-minus-square-o", style:"font-size:22px"}
+      /       .title__minus-text タイトルを削除する
+      /   .body__btn__area
+      /     %i.body__plus#body__plus{class: "fa fa-file-text-o", style:"font-size:22px"}
+      /       .body__plus-text テキストを追加する
+      /     %i.body__minus#body__minus{class: "fa fa-file-text-o", style:"font-size:22px"}
+      /       .body__minus-text テキストを削除する
+      /   .image__btn__area
+      /     %i.image__plus#image__plus{class: "fa fa-file-image-o", style:"font-size:22px"}
+      /       .image__plus-text イメージを追加する
+      /     %i.image__minus#image__minus{class: "fa fa-file-image-o", style:"font-size:22px"}
+      /       .image__minus-text イメージを削除する
+      .post__form__project
+        .post__form__project-border
+      .tag__form#tag__form
+        .tag__input__area
+          .tag__input__area-text タグ
+          = text_field_tag 'project[genre_list][]', "", class: 'tag__input__area-box', placeholder: '例）お肉'
+        / .tag__btn__are
+        /   %i.plus__btn{class: "fa fa-plus-square-o", id: "tag__plus"}
+        /     .plus__text タグを追加する
+        /   %i.minus__btn{class: "fa fa-minus-square-o", id: "tag__minus"}
+        /     .minus__text タグを削除する
+      .post__form__project
+        .post__form__project-border
+        %p.post__copy 次に支援者様へのリターンを入力しましょう。
+        %p.post__copy こちらも全項目入力必須です。魅力的なリターンを用意しましょう。
+        .post__form__project-border
+      = f.fields_for :course do |i|
+        .form__box
+          .post__field
+            .post__field__text リターンタイトル
+            = i.text_field :title, class: 'post__field__box form-short', placeholder: '例）40文字以内', maxlength: "40"
+          / - if @project.course[i.index].errors.full_messages_for(:name).any?
+          /   .post__error リターンタイトルを入力してください。
+          .post__field
+            .post__field__text リターン詳細文
+            = i.text_area :body, class: 'post__field__box form-long'
+          / - if @project.courses[i.index].errors.full_messages_for(:body).any?
+          /   .post__error 詳細文を入力してください。
+          .post__field
+            .post__field__text 金額
+            = i.text_field :price, class: 'post__field__box form-short', placeholder: '例）10000', maxlength: "6"
+          / - if @project.courses[i.index].errors.full_messages_for(:price).any?
+          /   .post__error 金額を入力してください。
+          .post__field
+            .post__field__text リターン用画像
+            .input-file
+              = i.file_field :image, class: "input-file" do
+                %span 選択されていません
+          / - if @project.courses[i.index].errors.full_messages_for(:image).any?
+          /   .post__error__image 画像を選択してください。
+          .post__field
+            .post__field__text 用意個数
+            = i.text_field :stock, class: 'post__field__box form-short', placeholder: '例）20', maxlength: "3"
+          / - if @project.courses[i.index].errors.full_messages_for(:stock).any?
+          /   .post__error 用意している個数を入力してください。
+          .post__field
+            .post__field__text 納品予定日
+            = i.text_field :delivery_date, class: 'post__field__box form-short', placeholder: '例）2017-12-22', maxlength: "10"
+          / - if @project.courses[i.index].errors.full_messages_for(:delivery_date).any?
+          /   .post__error 納品予定日を入力してください。
+          .post__form__project#border__under{data: {number: "#{i.index}"}}
+            .post__form__project-border
+      / %i.plus__btn{class: "fa fa-plus-square-o", id: "plus__btn"}
+      /   .plus__text リターンを追加する
+      / %i.minus__btn{class: "fa fa-minus-square-o", id: "minus__btn"}
+      /   .minus__text リターンを削除する
+      /
+      / type: "button" の記述を除去すればデータ登録可能
+      = f.submit "投稿する", class: "post__btn", id: "project__submit__btn", type: "button"
+= render partial: "footer"

@@ -10,4 +10,9 @@ Rails.application.routes.draw do
       get 'password'
     end
   end
+
+  resources :projects do
+  end
+
+
 end
