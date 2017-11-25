@@ -1,4 +1,10 @@
+.carousel-indicators{
+  position: absolute;
+  top: 400px;
+}
+
 .pickup {
+  margin-top: -100px;
   position: relative;
 
   &__image {
@@ -7,7 +13,7 @@
     border-radius: 4px;
     position: absolute;
     top: 0;
-    bottom: 250px;
+    bottom: 100px;
     left: 0;
     right: 0;
     margin: auto auto;
@@ -23,7 +29,7 @@
     font-size: 30px;
     text-align: center;
     position: absolute;
-    top: 250px;
+    top: 300px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -44,7 +50,7 @@
     height: 45px;
     width: 120px;
     position: absolute;
-    top: 250px;
+    top: 300px;
     bottom: 0;
     left: 0;
     right: 0;

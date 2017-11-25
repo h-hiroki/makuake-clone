@@ -1,7 +1,25 @@
 .pickup
   = link_to root_path do
+    #carousel-example.carousel.slide{data: {ride: "carousel"}}
+      %ol.carousel-indicators
+        %li.active{data: {target: "#carousel-example",slide_to: "0"}}
+        %li{data: {target: "#carousel-example", slide_to: "1"}}
+        %li{data: {target: "#carousel-example", slide_to: "2"}}
+        %li{data: {target: "#carousel-example", slide_to: "3"}}
+        %li{data: {target: "#carousel-example", slide_to: "4"}}
+      .carousel-inner
+        .item.active
+          = image_tag("background_1.jpg", class: "pickup__image__background")
+        .item
+          = image_tag("background_2.jpg", class: "pickup__image__background")
+        .item
+          = image_tag("background_3.jpg", class: "pickup__image__background")
+        .item
+          = image_tag("background_4.jpg", class: "pickup__image__background")
+        .item
+          = image_tag("background_5.jpg", class: "pickup__image__background")
     = image_tag("hero_thumb.png", class: "pickup__image")
-    = image_tag("background_1.jpg", class: "pickup__image__background")
   .pickup__msg
     = link_to "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか", root_path, class: "pickup__msg__link"
   .pickup__view-btn VIEW
+
