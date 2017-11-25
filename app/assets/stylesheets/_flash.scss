@@ -1,0 +1,17 @@
+.flash {
+  position: fixed;
+  z-index: 30000;
+  width: 100%;
+  color: white;
+  text-align: center;
+  height: 66px;
+  font-size: 30px;
+  line-height: 66px;
+  opacity: 0.9;
+  &__alert{
+    background-color: red;
+  }
+  &__notice {
+    background-color: #f7c600;
+  }
+}

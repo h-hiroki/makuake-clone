@@ -13,7 +13,10 @@
 | e-mail     | string     | null: false, unique: true | |
 | password   | string     | null: false | |
 | name       | string     | null: false | ユーザー名 |
-| image      | text       | null: false | ||
+| image      | text       | null: false | |
+| location   | text       |             | |
+| birthday   | text       |             | |
+| gender     | text       |             | ||
 *※deviseにて生成*
 
 

@@ -1,0 +1,74 @@
+= render partial: "projects/header"
+.mypage__edit
+  .edit__left
+    .mypage__left__box
+      - if current_user.image.present?
+        = image_tag("#{@user.image}", class: "mypage__image", size: "175x175")
+      - else
+        = image_tag("icon_red.png", class: "mypage__image", size: "175x175")
+    .mypage__edit__name #{@hold_user.name}
+    .mypage__main__left
+      .mypage__border
+      .mypage__menu__title
+        %i.mypage__menu__title-image{class: "fa fa-group faa-pulse animated"}
+        .mypage__menu__title-text サポーター
+      .mypage__inbox
+        .mypage__menu
+          = link_to "支援したプロジェクト", "", class: "mypage__menu__body"
+      .mypage__inbox
+        .mypage__menu
+          = link_to "購入履歴(ストア)", "", class: "mypage__menu__body"
+      .mypage__inbox.inbox__last
+        .mypage__menu
+          = link_to "メッセージ", "", class: "mypage__menu__body"
+      .mypage__border
+      .mypage__menu__title
+        %i.mypage__menu__title-image{class: "fa fa-user faa-pulse animated"}
+        .mypage__menu__title-text アカウント情報
+      .mypage__inbox
+        .mypage__menu
+          = link_to "プロフィール編集", edit_user_path, class: "mypage__menu__body"
+      .mypage__inbox.inbox__last
+        .mypage__menu
+          = link_to "メール通知設定", "", class: "mypage__menu__body"
+  .edit__right
+    .mypage__main__right
+      .right__title
+        %h2 プロフィール編集
+      = form_for (@user), url: user_path do |f|
+        .profile__field
+          .profile__field__text ユーザー名
+          .profile__field__box
+            = f.text_field :name, class: 'profile__field__box-form', placeholder: '例）若松大輔'
+            - if @user.errors.full_messages_for(:username).any?
+              .profile__error 名前を入力してください。
+        .profile__field
+          .profile__field__text プロフィール写真
+          .profile__field__box
+            %p 今後のアップデートでプロフィール画像を登録できるようになります
+            / = f.file_field :image, style: "margin-left:12px;"
+        .profile__field
+          .profile__field__text メールアドレス
+          .profile__field__box
+            = f.text_field :email, class: 'profile__field__box-form'
+          - if @user.errors.full_messages_for(:email).any?
+            .post__error メールアドレスを入力してください。
+        .profile__field
+          .profile__field__text パスワード
+          .profile__field__box
+            = link_to "編集", password_user_path, class: "profile__pass__edit"
+        .profile__field
+          .profile__field__text 現在地
+          .profile__field__box
+            = f.text_field :location, class: 'profile__field__box-form'
+        .profile__field
+          .profile__field__text 誕生日
+          .profile__field__box
+            = f.text_field :birthday, class: 'profile__field__box-form'
+        .profile__field
+          .profile__field__text 性別
+          .profile__field__box
+            = f.text_field :gender, class: 'profile__field__box-form'
+        .profile__submit
+          = f.submit "変更する", class: "profile__submit__btn"
+= render partial: "projects/footer"
