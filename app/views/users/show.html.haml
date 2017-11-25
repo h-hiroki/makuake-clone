@@ -1,0 +1,55 @@
+= render partial: "projects/header"
+.mypage__own
+  .mypage__own__box
+    .mypage__left__box
+      - if current_user.image.present?
+        = image_tag("#{current_user.image}", class: "mypage__image", size: "175x175")
+      - else
+        = image_tag("icon_red.png", class: "mypage__image", size: "175x175")
+    .mypage__right__box
+      .mypage__account-name #{current_user.name}
+      .mypage__news
+        .mypage__news__days 2017/10/02
+        = link_to "【重要】 社名変更に伴う利用規約等変更のお知らせ", "", class: "mypage__news__body"
+      .mypage__news
+        .mypage__news__days 2017/07/05
+        = link_to "【実行者様向け】7/11（火）システムメンテナンスのお知らせ", "", class: "mypage__news__body"
+      .mypage__news
+        .mypage__news__days 2017/06/13
+        = link_to "【新機能】お気に入り＃タグ機能 の提供が開始されました！", "", class: "mypage__news__body"
+      = link_to "お知らせ一覧を見る", "", class: "mypage__new__more"
+.mypage__main
+  .mypage__main__left
+    .mypage__border
+    .mypage__menu__title
+      %i.mypage__menu__title-image{class: "fa fa-group faa-pulse animated"}
+      .mypage__menu__title-text サポーター
+    .mypage__inbox
+      .mypage__menu
+        = link_to "支援したプロジェクト", "", class: "mypage__menu__body"
+    .mypage__inbox
+      .mypage__menu
+        = link_to "購入履歴(ストア)", "", class: "mypage__menu__body"
+    .mypage__inbox.inbox__last
+      .mypage__menu
+        = link_to "メッセージ", "", class: "mypage__menu__body"
+    .mypage__border
+    .mypage__menu__title
+      %i.mypage__menu__title-image{class: "fa fa-user faa-pulse animated"}
+      .mypage__menu__title-text アカウント情報
+    .mypage__inbox
+      .mypage__menu
+        = link_to "プロフィール編集", edit_user_path, class: "mypage__menu__body"
+    .mypage__inbox.inbox__last
+      .mypage__menu
+        = link_to "メール通知設定", "", class: "mypage__menu__body"
+  .mypage__main__right
+    .right__title
+      %h2 支援したプロジェクト
+      = link_to "支援したプロジェクト一覧へ", "", class: "mypage__new__more"
+    .right__body 支援しているプロジェクトはありません。
+    .right__title
+      %h2 購入履歴(ストア)
+      = link_to "購入履歴(ストア)一覧へ", "", class: "mypage__new__more"
+    .right__body 購入した商品はありません。
+= render partial: "projects/footer"

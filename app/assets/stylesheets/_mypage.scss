@@ -1,0 +1,269 @@
+.mypage__edit {
+  @include clearfix();
+  width: 1000px;
+  margin: 20px auto 0;
+}
+
+.edit__left {
+  float: left;
+  width: 220px;
+}
+
+.edit__right {
+  float: right;
+  width: 780px;
+  margin-top: 20px;
+}
+
+.mypage__own {
+  background-color: #f5f5f5;
+  width: 100%;
+  &__box {
+    height: 225px;
+    width: 1000px;
+    margin: 0 auto;
+  }
+}
+.mypage__left__box{
+  width: 220px;
+  height: 225px;
+  text-align: center;
+  float: left;
+  .mypage__image {
+    margin-top: 20px;
+  }
+}
+.mypage__right__box {
+  float: right;
+  width: 745px;
+  height: 225px;
+  .mypage__account-name {
+    font-size: 20px;
+    margin: 33px 0 31px 0;
+    letter-spacing: 0.1rem;
+  }
+  .mypage__news{
+    display: table;
+    font-size: 10px;
+    margin: 0 0 9px -28px;
+    border-collapse: separate;
+    border-spacing: 30px 0;
+    &__days {
+      display: table-cell;
+    }
+    &__body {
+      color: #4AB3DF;
+      display: table-cell;
+    }
+  }
+}
+
+
+.mypage__edit__name {
+  width: 220px;
+  text-align: center;
+  color: #4AB3DF;
+  margin-bottom: 28px;
+}
+
+.mypage__new__more {
+  color: #4AB3DF;
+  font-size: 10px;
+  text-align: right;
+  margin-top: 11px;
+  float: right;
+}
+
+.mypage__main {
+  @include clearfix();
+  width: 1000px;
+  margin: 30px auto 0;
+}
+
+.mypage__main__left {
+  float: left;
+  width: 220px;
+  .mypage__border {
+    background: linear-gradient(to right, #1ad4ff 0%, #1ad4ff 25%, #fb2a79 25%, #fb2a79 50%, #ffe600 50%, #ffe600 75%, #bbf117 75%, #bbf117 100%);
+    height: 3px;
+    width: 220px;
+  }
+  .mypage__menu__title {
+    height: 47px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ededed;
+    font-size: 11px;
+    text-indent: 40px;
+    padding-top: 3px;
+    font-weight: bold;
+    &-image {
+      float: left;
+      margin: 14px 0 0 13px;
+    }
+    &-text {
+      float: left;
+      margin: 13px 0 0 -28px;
+    }
+  }
+  .mypage__inbox {
+    padding: 5px 0;
+    height: 41px;
+    border-bottom: 1px solid #ededed;
+    .mypage__menu {
+      display: block;
+      position: relative;
+      border-radius: 2px;
+      &__body {
+        position: absolute;
+        border-radius: 2px;
+        float: left;
+        display: block;
+        width: 204px;
+        height: 41px;
+        line-height: 41px;
+        font-size: 11px;
+        padding-left: 16px;
+      }
+      &__body:hover {
+        background-color: #4AB3DF;
+        color: #fff;
+      }
+      &__icon {
+        display: block;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        color: #4AB3DF;
+      }
+      &__body:hover + .mypage__menu__icon {
+         background-color: #4AB3DF;
+         color: #fff;
+      }
+    }
+  }
+  .inbox__last {
+    margin-bottom: 27px;
+  }
+  .security__box {
+    width: 220px;
+    height: 160px;
+    padding: 20px;
+    border: 1px solid #ededed;
+    box-sizing: border-box;
+    text-align: center;
+    .security__text {
+      font-size: 10px;
+      text-align: left;
+    }
+    .security__image {
+      margin-top: 20px;
+    }
+  }
+}
+.mypage__main__right {
+  float: right;
+  width: 745px;
+}
+
+.right__title {
+  height: 50px;
+  h2 {
+    font-size: 22px;
+    line-height: 32px;
+    margin-bottom: 15px;
+    color: #333333;
+    float: left;
+  }
+}
+
+.right__body {
+  padding: 15px;
+  background: rgb(216, 216, 216);
+  margin-bottom: 45px;
+}
+
+.profile__field {
+  display: table;
+  font-size: 12px;
+  height: 35px;
+  border-top: 1px solid #e5e5e5;
+  border-left: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+  &__text {
+    display: table-cell;
+    vertical-align: middle;
+    width: 190px;
+    padding-left: 20px;
+    background-color: #fdfdfd;
+    border-right: 1px solid #e5e5e5;
+    color: #505050;
+    font-size: 13px;
+    line-height: 18px;
+    border-bottom: 1px solid #e5e5e5;
+    height: 60px;
+  }
+  &__box {
+    display: table-cell;
+    vertical-align: middle;
+    background: white;
+    width: 520px;
+    margin-right: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    height: 60px;
+    &-form {
+      padding-left: 6px;
+      line-height: 1.5em;
+      width: 400px;
+      font-size: 13px;
+      margin-left: 10px;
+      border: 2px solid #e5e5e5;
+      border-radius: 5px;
+    }
+  }
+}
+
+.profile__error {
+  display: table-cell;
+  padding: 1px 0 0 19px;
+  color : red;
+}
+
+.profile__pass__edit {
+  background-color: red;
+  display: block;
+  height: 30px;
+  width: 75px;
+  line-height: 30px;
+  text-align: center;
+  margin-left: 10px;
+  background-color: #4AB3DF;
+  color: #fff;
+}
+
+.profile__submit {
+  // position: relative;
+  // width: 100%;
+  float: right;
+  margin-top: 20px;
+  margin-right: 33px;
+  // padding: 10px 20px 10px;
+
+  &__btn{
+    border-style: none;
+    background-color: #4AB3DF;
+    color: white;
+    padding: 10px 20px;
+  }
+
+}
+
+.profile__field__long {
+  padding-left: 6px;
+  line-height: 1.5em;
+  width: 400px;
+  font-size: 13px;
+  margin: 17px 0 17px 10px;
+  height: 200px;
+  border-radius: 2px;
+  border: 2px solid #e5e5e5;
+}
