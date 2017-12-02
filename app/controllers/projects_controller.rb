@@ -6,22 +6,23 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
-    @project.course.build
+    @project.courses.build
   end
 
   def create
     @project = Project.new(project_params)
+    binding.pry
     if @project.save
       redirect_to root_path, notice: "企画が投稿されました。"
     else
       flash.now[:alert] = "未入力項目があります。"
-      redirect_to new_planner_project_path, alert: "未入力項目があります。"
+      redirect_to root_path, alert: "未入力項目があります。"
     end
   end
 
   private
   def project_params
-    params.require(:project).permit(:title, :target_fig, :end_time, :title, :image, :body).merge(planner_id: current_user.id)
+    params.require(:project).permit(:title, :target_fig, :end_time, :image, :body, courses_attributes: [:name, :body, :price, :image, :stock, :delivery]).merge(planner_id: current_user.id)
   end
 
 end

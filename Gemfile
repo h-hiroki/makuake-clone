@@ -40,7 +40,8 @@ gem 'erb2haml'
 gem 'font-awesome-rails'
 gem 'bootstrap-sass'
 gem 'devise'
-
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :production do
   gem 'unicorn'
@@ -54,8 +55,8 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'pry-rails'
 end
-
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'

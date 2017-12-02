@@ -1,3 +1,6 @@
 class Project < ApplicationRecord
-  has_many :course
+  mount_uploader :image, ImageUploader
+
+  has_many :courses
+  accepts_nested_attributes_for :courses
 end

@@ -45,8 +45,7 @@
         .profile__field
           .profile__field__text プロフィール写真
           .profile__field__box
-            %p 今後のアップデートでプロフィール画像を登録できるようになります
-            / = f.file_field :image, style: "margin-left:12px;"
+            = f.file_field :image, style: "margin-left:12px;"
         .profile__field
           .profile__field__text メールアドレス
           .profile__field__box
