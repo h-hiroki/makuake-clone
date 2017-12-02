@@ -1,0 +1,66 @@
+.header
+  .inbox
+    = link_to "/" do
+      = image_tag("makuake-logo.png", class: "inbox__logo")
+.main
+  .main__course
+    %ul.course__header
+      %li.course__header-list  1.支払方法の選択
+      %li.course__header-list 2.お届け先の入力
+      %li.course__header-list.list-select 3.申込み内容の確認
+      %li.course__header-list.list-last 4.完了
+    .course__menu
+      %h2.course__menu__title 申し込み内容を確認する
+
+    = form_for (@supporter), url: project_course_supporters_path do |f|
+      .course__detail
+        .post__form
+          .confirmation
+            .confirmation__dl
+              .confirmation__dt 支援金額
+              .confirmation__dd #{@supporter.course.price.to_s(:delimited)}円(税込)
+            .confirmation__dl
+              .confirmation__dt コース内容
+              .confirmation__dd #{simple_format(@supporter.course.body)}
+            .confirmation__dl
+              .confirmation__dt お名前
+              .confirmation__dd #{@supporter.name}
+              = f.hidden_field :name
+            .confirmation__dl
+              .confirmation__dt 性別
+              .confirmation__dd #{@supporter.gender}
+              = f.hidden_field :gender
+            .confirmation__dl
+              .confirmation__dt 誕生日
+              .confirmation__dd #{@supporter.birthday}
+              = f.hidden_field :birthday
+            .confirmation__dl
+              .confirmation__dt 電話番号
+              .confirmation__dd  #{@supporter.mobile}
+              = f.hidden_field :mobile
+            .confirmation__dl
+              .confirmation__dt お届け先
+              .confirmation__dd
+                〒#{@supporter.postal_code}
+                %br
+                  #{@supporter.region}#{@supporter.city}#{@supporter.block}#{" "}#{@supporter.building}
+              = f.hidden_field :postal_code
+              = f.hidden_field :region
+              = f.hidden_field :city
+              = f.hidden_field :block
+              = f.hidden_field :building
+            .confirmation__dl
+              .confirmation__dt.last__border 支払い方法
+              .confirmation__dd.last__border
+                = image_tag("convenience.gif", class: "pay__image-convenience", style: "width:478px")
+      .btn__field
+        = f.submit "戻る", name: 'back', class: "back__btn"
+        = f.submit "支援する", class: "support__submit next__btn", id: "support__submit"
+
+    .caution__box
+      %p ご確認お願いします
+      %p このプロジェクトは目標金額の達成有無にかかわらず、サポーターがプロジェクトに支援を申し込んだ時点でプロジェクトの成立（売買契約の成立）となります。※Makuakeは、プロジェクトオーナーのプロジェクトが必ず成功することや、プロジェクトの品質、リターン内容を保証するものではありません。従って、プロジェクト進行中に関するトラブル、返金要求、リターン返品要求はプロジェクトオーナーの責任のもと行われます。
+      %p セキュリティについて
+      .caution__inbox
+        = image_tag("siteSealImage.gif", class: "caution__inbox-image")
+        %p.caution__inbox-text サイトはSSL暗号化通信に対応しておりますので、入力した情報は安全に送信されます。

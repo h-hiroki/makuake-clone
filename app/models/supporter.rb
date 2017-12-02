@@ -1,6 +1,6 @@
 class Supporter < ApplicationRecord
-  belongs_to :course
-  belongs_to :user
+  belongs_to :course, optional: true
+  belongs_to :user, optional: true
 
   validates :name, presence: true
   validates :gender, presence: true

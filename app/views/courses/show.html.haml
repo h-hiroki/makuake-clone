@@ -1,0 +1,43 @@
+.header
+  .inbox
+    = link_to "/" do
+      = image_tag("makuake-logo.png", class: "inbox__logo")
+.main
+  .main__course
+    %ul.course__header
+      %li.course__header-list.list-select  1.支払方法の選択
+      %li.course__header-list 2.お届け先の入力
+      %li.course__header-list 3.申込み内容の確認
+      %li.course__header-list.list-last 4.完了
+    .course__menu
+      %h2.course__menu__title 選択中のコース
+      = link_to "変更する", project_path(@course.project), class: "course__menu-link"
+    .course__detail
+      = image_tag("#{@course.image}", class: "course__detail-image")
+      .course__detail__main
+        .course__detail__main-price #{@course.price.to_s(:delimited)}円コース(税込)
+        .course__detail__main-title #{@course.name}
+        .course__detail__main-body #{simple_format(@course.body)}
+    .course__menu
+      %h2.course__menu__title 支払い方法を選択する
+      .course__menu__text
+        合計金額が1,000円(税込)以上の場合、クレジットカード以外の決済手段もご利用可能です。支払い方法の詳細については
+        = link_to "ヘルプ", "", class: "course__menu__text-link"
+        をご覧ください。
+    .course__detail
+      .course__detail__pay
+        %ul.pay__select
+          %li.pay__select-list クレジットカード
+          %li.pay__select-list コンビニ支払い
+          %li.pay__select-list 銀行振込
+          %li.pay__select-list.list-last ネットバンク振込
+        = image_tag("convenience.gif", class: "pay__image-convenience")
+    .btn__field
+      = link_to "次へ", new_project_course_supporter_path(@course.project_id, @course.id), class: "next__btn"
+  .caution__box
+    %p ご確認お願いします
+    %p このプロジェクトは目標金額の達成有無にかかわらず、サポーターがプロジェクトに支援を申し込んだ時点でプロジェクトの成立（売買契約の成立）となります。※Makuakeは、プロジェクトオーナーのプロジェクトが必ず成功することや、プロジェクトの品質、リターン内容を保証するものではありません。従って、プロジェクト進行中に関するトラブル、返金要求、リターン返品要求はプロジェクトオーナーの責任のもと行われます。
+    %p セキュリティについて
+    .caution__inbox
+      = image_tag("siteSealImage.gif", class: "caution__inbox-image")
+      %p.caution__inbox-text サイトはSSL暗号化通信に対応しておりますので、入力した情報は安全に送信されます。

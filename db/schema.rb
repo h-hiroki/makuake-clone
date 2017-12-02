@@ -10,25 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171202130222) do
+ActiveRecord::Schema.define(version: 20171202150816) do
 
   create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.text     "body",       limit: 65535
     t.datetime "delivery"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.integer  "price"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.integer  "price",                    default: 0
     t.text     "image",      limit: 65535
-    t.integer  "stock"
-    t.integer  "project_id"
+    t.integer  "stock",                    default: 0
+    t.integer  "project_id",               default: 0
     t.index ["project_id"], name: "index_courses_on_project_id", using: :btree
   end
 
   create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "planner_id"
     t.integer  "target_fig"
-    t.datetime "end_time"
+    t.date     "end_time"
     t.string   "title",                    null: false
     t.text     "image",      limit: 65535
     t.text     "body",       limit: 65535
@@ -37,20 +37,19 @@ ActiveRecord::Schema.define(version: 20171202130222) do
   end
 
   create_table "supporters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",     null: false
-    t.integer  "course_id",   null: false
-    t.string   "name",        null: false
-    t.string   "gender",      null: false
-    t.date     "birthday",    null: false
-    t.string   "mobile",      null: false
-    t.string   "postal_code", null: false
-    t.string   "integer",     null: false
-    t.string   "region",      null: false
-    t.string   "city",        null: false
-    t.string   "block",       null: false
-    t.string   "building"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "user_id",     default: 0
+    t.integer  "course_id",   default: 0
+    t.string   "name",        default: ""
+    t.string   "gender",      default: ""
+    t.date     "birthday"
+    t.string   "mobile",      default: ""
+    t.string   "postal_code", default: ""
+    t.string   "region",      default: ""
+    t.string   "city",        default: ""
+    t.string   "block",       default: ""
+    t.string   "building",    default: "なし"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["course_id"], name: "index_supporters_on_course_id", using: :btree
     t.index ["user_id"], name: "index_supporters_on_user_id", using: :btree
   end
