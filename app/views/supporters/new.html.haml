@@ -1,0 +1,82 @@
+.header
+  .inbox
+    = link_to "/" do
+      = image_tag("makuake-logo.png", class: "inbox__logo")
+.main
+  .main__course
+    %ul.course__header
+      %li.course__header-list  1.支払方法の選択
+      %li.course__header-list.list-select 2.お届け先の入力
+      %li.course__header-list 3.申込み内容の確認
+      %li.course__header-list.list-last 4.完了
+    .course__menu
+      %h2.course__menu__title お届け先情報をご入力ください
+      .course__menu__text
+        Makuakeサイトで取得した情報の取り扱いに関する
+        = link_to "プライバシーポリシー", "", class: "course__menu__text-link"
+        について
+
+    = form_for (@supporter), url: confirm_project_course_supporters_path do |f|
+      .course__detail
+        .post__form
+          .post__field
+            .post__field__text 名前
+            = f.text_field :name, class: 'post__field__box form-short', placeholder: '例）hhiroki'
+          - if @supporter.errors.full_messages_for(:name).any?
+            .post__error 名前を入力してください。
+          .post__field
+            .post__field__text 性別
+            .radio__field
+              %label
+                男
+                = f.radio_button :gender, "男"
+              %label
+                女
+                = f.radio_button :gender, "女"
+          - if @supporter.errors.full_messages_for(:gender).any?
+            .post__error 性別を選択してください。
+          .post__field
+            .post__field__text 誕生日
+            = f.text_field :birthday, class: 'post__field__box form-short', placeholder: '例）1989-05-12', maxlength: "10"
+          - if @supporter.errors.full_messages_for(:birthday).any?
+            .post__error 誕生日を入力してください。
+          .post__field
+            .post__field__text 電話番号
+            = f.text_field :mobile, class: 'post__field__box form-short', placeholder: '例）08011110000', maxlength: "11"
+          - if @supporter.errors.full_messages_for(:mobile).any?
+            .post__error 電話番号を入力してください。
+          .post__field
+            .post__field__text 郵便番号
+            = f.text_field :postal_code, class: 'post__field__box form-short', placeholder: '例）1414411', maxlength: "7"
+          - if @supporter.errors.full_messages_for(:postal_code).any?
+            .post__error 郵便番号を入力してください。
+          .post__field
+            .post__field__text 都道府県
+            = f.text_field :region, class: 'post__field__box form-short', placeholder: '例）栃木県'
+          - if @supporter.errors.full_messages_for(:region).any?
+            .post__error 都道府県を入力してください。
+          .post__field
+            .post__field__text 市町村
+            = f.text_field :city, class: 'post__field__box form-short', placeholder: '例）宇都宮市餃子町'
+          - if @supporter.errors.full_messages_for(:city).any?
+            .post__error 市町村を入力してください。
+          .post__field
+            .post__field__text 番地
+            = f.text_field :block, class: 'post__field__box form-short', placeholder: '例）123-4567'
+          - if @supporter.errors.full_messages_for(:block).any?
+            .post__error 番地を入力してください。
+          .post__field
+            .post__field__text 建物名
+            = f.text_field :building, class: 'post__field__box form-short', placeholder: '例）餃子像2号'
+          - if @supporter.errors.full_messages_for(:building).any?
+            .post__error 建物名を入力してください。
+      .btn__field
+        = link_to "戻る", project_course_path(@course.project_id, @course), class: "back__btn"
+        = f.submit "確認する", class: "support__submit next__btn", id: "support__submit"
+    .caution__box
+      %p ご確認お願いします
+      %p このプロジェクトは目標金額の達成有無にかかわらず、サポーターがプロジェクトに支援を申し込んだ時点でプロジェクトの成立（売買契約の成立）となります。※Makuakeは、プロジェクトオーナーのプロジェクトが必ず成功することや、プロジェクトの品質、リターン内容を保証するものではありません。従って、プロジェクト進行中に関するトラブル、返金要求、リターン返品要求はプロジェクトオーナーの責任のもと行われます。
+      %p セキュリティについて
+      .caution__inbox
+        = image_tag("siteSealImage.gif", class: "caution__inbox-image")
+        %p.caution__inbox-text サイトはSSL暗号化通信に対応しておりますので、入力した情報は安全に送信されます。

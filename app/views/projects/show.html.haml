@@ -1,0 +1,104 @@
+= render partial: "header"
+.project__main
+  .project__header
+    .project__header__box
+      .project__header__link
+        = link_to "TOP  >  ", "/", class: "project__header__link-text"
+        = link_to "プロジェクト一覧", "/", class: "project__header__link-text"
+        / .project__header__link-text #{@project.title}
+      .project__menu
+        = link_to "プロジェクト", "/", class: "nav-btn"
+        = link_to "活動レポート", "/", class: "nav-btn"
+        = link_to "応援コメント", "/", class: "nav-btn"
+  .project
+    = image_tag("#{@project.image}", class: "project__main__image")
+    .project__main__detail
+      %dl
+        .st__money
+          - if @project.clear_rate.round(0) >= 100
+            = image_tag("success2.png", class: "st__money-success")
+          %project__main__detail
+            = image_tag("yen-white.png", class: "st__money-icon")
+            .st__money-title 集まっている金額
+          %dd.st__money-num #{@project.sum_price.to_s(:delimited)}円
+          .st__money-goal 目標金額 #{(@project.target_fig.to_i).to_s(:delimited)}円
+      .money__gage.st__money-gage
+        - if @project.clear_rate.round(0) > 100
+          .money__gage__in{style: "width:100%" }
+            .money__gage__in__percent #{@project.clear_rate.round(0)}%
+        - else
+          .money__gage__in{style: "width:#{@project.clear_rate.round(0)}%" }
+            .money__gage__in__percent #{@project.clear_rate.round(0)}%
+      %dl
+        %dt
+          = image_tag("people-white.png", class: "st__money__supporter-icon")
+          .st__money__supporter-name サポーター
+        %dd.st__money__supporter-count #{@project.courses.map{|course|(course.supporters.count)}.sum}人
+      %dl
+        %dt
+          = image_tag("clock-white.png", class: "st__money__limit-icon")
+          .st__money__limit-title 残り
+        - if ((@project.end_time - Date.today).to_i) <= 0
+          %dd.st__money__limit-days 終了
+        - else
+          %dd.st__money__limit-days #{(@project.end_time - Date.today).to_i}日
+      / .st__money-btn#st__money-btn 支援するコースを選択する
+      = link_to "支援するコースを選択する", project_path(@project.id), class: "st__money-btn", type: "button"
+
+    .project__main__name
+      .project__main__name-text #{@project.title}
+      / - @project.genre_list.each do |tag|
+      /   .tag__btn
+    .project__left
+      .project__detail
+        / - if project.has_attribute?(:title)
+        /   .project__detail__border
+        /   .project__detail__block #{@project.title}
+        /   .project__detail__border
+        / - elsif project.has_attribute?(:body)
+        /   .project__detail__body
+        / - else
+        /   = image_tag("#{@project.image}", class: "project__detail__image")
+      .project__detail__bottom
+        / .investments__btn#investments__btn 支援するコースを選択する
+      / = image_tag("logo1.png", class: "project__detail__bottom-image")
+      / .project__detail__logo-text “まだここにない”を手に入れよう
+      / .project__detail__bottom-box
+      /   = image_tag("main_project.jpg", class: "project__detail__bottom-box-image")
+      /   .project__detail__bottom-box-fb-link
+      /     %p.detail__fb-link-text
+      /       このプロジェクトが気に入ったら
+      /       %br
+      /         %span.detail__fb-link-text-span いいね!
+      /         をしよう
+    .project__right
+      .investments__bar#investments__bar
+        .investments__bar__title 支援するコースを選択する
+        .investments__bar__text このプロジェクトは目標金額の達成有無にかかわらず、サポーターがプロジェクトに支援を申し込んだ時点でプロジェクトの成立（売買契約の成立）となります。
+        - @project.courses.each do |course|
+          .investments__bar__menu
+            .investments__bar__menu-money
+              #{course.price.to_s(:delimited)}円コース
+              %span.investments__bar__menu-tax (税込)
+            .investments__bar__menu-qty 残り#{(course.stock.to_i)}個
+          .investments__bar__detail
+            .investments__bar__detail-title #{course.name}
+            = image_tag("#{course.image}", class: "investments__bar__detail-image")
+            .investments__bar__detail-body #{simple_format(course.body)}
+            .investments__supporter-count
+              = image_tag("black-people.png", class: "investments__supporter-count-image")
+              .investments__supporter-count-text #{course.supporters.ids.count}人が支援しています。
+            .investments__supporter-duedata
+              = image_tag("bag.png", class: "investments__supporter-duedata-image")
+              .investments__supporter-duedata-text #{course.delivery.strftime("%Y年%m月")}にお届け予定です。
+          .investments__bar__link__box
+            - if ((course.stock.to_i) ) == 0
+              .stockout__btn 在庫切れ
+            - else
+              - if user_signed_in?
+                = link_to "このコースに申し込む",project_course_path(@project, course), class: "order__btn"
+              - else
+                %a.order__btn{data: {toggle: "modal", target: "#my-modal-login-investments"}} このコースに申し込む
+        .planner__inquiry
+          .planner__inquiry-text 実行者へ問合せ
+= render partial: "footer"

@@ -14,5 +14,14 @@ Rails.application.routes.draw do
   resources :projects do
   end
 
+  resources :projects, only: [:show,] do
+    resources :courses, only: [:show] do
+      resources :supporters, only: [:new, :create] do
+        collection do
+          post 'confirm'
+        end
+      end
+    end
+  end
 
 end

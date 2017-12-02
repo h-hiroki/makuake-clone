@@ -5,6 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   mount_uploader :image, ImageUploader
 
+  has_many :projects
+  has_many :supporters
+  has_many :courses, through: :supporters
+
   validates :name, presence: true
   validates :email, presence: true
 
