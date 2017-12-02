@@ -39,8 +39,8 @@
         .profile__field
           .profile__field__text ユーザー名
           .profile__field__box
-            = f.text_field :name, class: 'profile__field__box-form', placeholder: '例）若松大輔'
-            - if @user.errors.full_messages_for(:username).any?
+            = f.text_field :name, class: 'profile__field__box-form', placeholder: '例）hhiroki'
+            - if @user.errors.full_messages_for(:name).any?
               .profile__error 名前を入力してください。
         .profile__field
           .profile__field__text プロフィール写真
@@ -50,8 +50,8 @@
           .profile__field__text メールアドレス
           .profile__field__box
             = f.text_field :email, class: 'profile__field__box-form'
-          - if @user.errors.full_messages_for(:email).any?
-            .post__error メールアドレスを入力してください。
+            - if @user.errors.full_messages_for(:email).any?
+              .profile__error メールアドレスを入力してください。
         .profile__field
           .profile__field__text パスワード
           .profile__field__box
