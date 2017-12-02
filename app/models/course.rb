@@ -1,6 +1,9 @@
 class Course < ApplicationRecord
   mount_uploader :image, ImageUploader
 
+  has_many :supporters
+  has_many :users, through: :supporters
+
   belongs_to :project, optional: true
 
   validates :name,        presence: true,      length: { maximum: 40 }
