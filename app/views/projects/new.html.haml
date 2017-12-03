@@ -35,6 +35,11 @@
               %span 選択されていません
         - if @project.errors.full_messages_for(:image).any?
           .post__error__image メインイメージを選択してください。
+        .post__field
+          .post__field__text 企画詳細文
+          = f.text_area :body, class: 'post__field__box form-long'
+        - if @project.errors.full_messages_for(:body).any?
+          .post__error 企画詳細文を入力してください。
       / .btn__area__newproject
       /   .title__btn__area
       /     %i.title__plus#title__plus{class: "fa fa-plus-square-o", style:"font-size:22px"}

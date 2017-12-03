@@ -9,6 +9,7 @@ class Project < ApplicationRecord
   validates :target_fig,  presence: true,      length: { maximum: 7 }
   validates :end_time,    presence: true
   validates :image,       presence: true
+  validates :body,        presence: true
 
   def clear_rate
     self.courses.map{|course|(course.supporters.count)*(course.price)}.sum/(self.target_fig.to_i).to_f*100

@@ -51,6 +51,7 @@
       /   .tag__btn
     .project__left
       .project__detail
+        %p #{@project.body}
         / - if project.has_attribute?(:title)
         /   .project__detail__border
         /   .project__detail__block #{@project.title}
