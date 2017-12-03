@@ -18,3 +18,5 @@
 
 # It's the mark not to upload for git.
 /public
+
+config/secrets.yml
