@@ -2,6 +2,8 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!, only: :new
 
   def index
+    @projects = Project.order(created_at: :DESC).limit(9)
+    @new_projects = Project.order(created_at: :DESC).limit(8)
   end
 
   def show
