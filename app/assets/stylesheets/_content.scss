@@ -40,9 +40,13 @@
         &__top {
           height: 174px;
           width: 310px;
+          color: #333333;
+          line-height: 1.6;
+          font-size: 18px;
+
         }
 
-        &__top > p {
+        &__top > a {
           line-height: 1.6;
           font-size: 17px;
           padding: 12px 14px 0;

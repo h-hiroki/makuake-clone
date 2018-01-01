@@ -15,7 +15,7 @@
       .newproject__post__area
         .post__field
           .post__field__text 企画タイトル
-          = f.text_field :title, class: 'post__field__box form-short', placeholder: '例）50文字以内', maxlength: "50"
+          = f.text_field :title, class: 'post__field__box form-short', placeholder: '例）20文字以内', maxlength: "50"
         - if @project.errors.full_messages_for(:title).any?
           .post__error メインタイトルを入力してください。
         .post__field

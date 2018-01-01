@@ -22,12 +22,12 @@
               %i.project__box__in__middle__money__image{class: "fa fa-yen"}
               %p #{project.sum_price}
           .project__box__in__bottom
-            - if project.clear_rate.round(0) > 100
+            - if project.clear_rate.round(0) >= 100
               .project__box__in__bottom__gage
               .project__box__in__bottom__per
                 %p #{project.clear_rate.round(0)}%
             - else
-              .project__box__in__bottom__gage{style: "width:#{project.clear_rate.round(0)}%"}
+              .project__box__in__bottom__gage{style: "width: #{200 * project.clear_rate.round(0) / 100}px"}
               .project__box__in__bottom__per
                 %p #{project.clear_rate.round(0)}%
 
