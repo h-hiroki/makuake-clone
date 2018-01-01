@@ -23,11 +23,11 @@
           %dd.st__money-num #{@project.sum_price.to_s(:delimited)}円
           .st__money-goal 目標金額 #{(@project.target_fig.to_i).to_s(:delimited)}円
       .money__gage.st__money-gage
-        - if @project.clear_rate.round(0) > 100
-          .money__gage__in{style: "width:100%" }
+        - if @project.clear_rate.round(0) >= 100
+          .money__gage__in{style: "width:270px" }
             .money__gage__in__percent #{@project.clear_rate.round(0)}%
         - else
-          .money__gage__in{style: "width:#{@project.clear_rate.round(0)}%" }
+          .money__gage__in{style: "width:#{270 * @project.clear_rate.round(0) / 100}px" }
             .money__gage__in__percent #{@project.clear_rate.round(0)}%
       %dl
         %dt
@@ -39,7 +39,7 @@
           = image_tag("clock-white.png", class: "st__money__limit-icon")
           .st__money__limit-title 残り
         - if ((@project.end_time - Date.today).to_i) <= 0
-          %dd.st__money__limit-days 終了
+          %dd.st__money__limit-days 期限切れ
         - else
           %dd.st__money__limit-days #{(@project.end_time - Date.today).to_i}日
       / .st__money-btn#st__money-btn 支援するコースを選択する
