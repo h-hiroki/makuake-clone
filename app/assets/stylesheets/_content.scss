@@ -35,6 +35,7 @@
         margin-left: 15px;
         margin-right: 15px;
         margin-bottom: 35px;
+        background-color: white;
 
         &__top {
           height: 174px;
@@ -89,7 +90,7 @@
 
         &__bottom{
           float: left;
-
+          width: 310px;
 
           &__gage {
             float: left;
@@ -106,7 +107,7 @@
 
           &__per {
             font-size: 14px;
-            padding: 0 0 0 10px;
+            padding: 0 15px 10px 20px;
             float:right;
           }
 
@@ -147,6 +148,8 @@
           height: 200px;
           width: 230px;
           margin-right: 25px;
+          background-color: white;
+          margin-bottom: 10px;
 
           &__image {
             border-radius: 3px;
@@ -165,9 +168,9 @@
 
   }
 
-  .sudden__rise, .ranking{
+  .sudden__rise{
     width: 1000px;
-    height: 350px;
+    height: 320px;
     margin: 0 auto;
 //    margin-left: 230px;
 
@@ -181,6 +184,7 @@
     &__project{
       height: 40px;
       margin-bottom: 15px;
+      margin-top: 20px;
 
       &__icon{
         float: left;
@@ -199,20 +203,27 @@
           height: 200px;
           width: 200px;
 
+
           &__image {
             border-radius: 3px;
           }
 
           &__title {
             color: #333333;
-            font-size: 14px;
+            font-size: 16px;
             line-height: 1.8;
             float: left;
             width: 188px;
+            height: 40px;
+            background-color: white;
           }
 
           &__text {
             color: #696969;
+            font-size: 12px;
+            width: 188px;
+            height: 120px;
+            background-color: white;
           }
         }
 
@@ -224,7 +235,7 @@
 
   .store {
     width: 1100px;
-    height: 670px;
+    height: 770px;
     margin: 0 auto;
 
     &__title {
@@ -246,26 +257,32 @@
       margin: 0 auto;
 
       &__box {
+        height: 300px;
         width: 310px;
         float: left;
         margin-left: 15px;
         margin-right:15px;
+        margin-bottom: 30px;
         display: block;
+        background-color: white;
 
         &__top {
           line-height: 1.6;
           font-size: 17px;
-          padding: 12px 14px 0;
+          // padding: 12px 14px 0;
           color: #333333;
         }
 
         &__top > p {
           color: #333333;
+          padding: 0 10px 0 10px;
         }
 
         &__bottom {
           height: 50px;
           width: 310px;
+          padding: 10px 10px 0 10px;
+
           &__stock{
             color: red;
             float:left;
@@ -293,13 +310,14 @@
 
   .mk-content{
     width: 1000px;
-    height: 350px;
+    height: 300px;
     margin: 0 auto;
     // margin-left: 230px;
     margin-top: 20px;
 
     &__project {
       margin-bottom: 20px;
+      width: 1100px;
 
       &__icon {
         float:left;
@@ -312,14 +330,15 @@
       }
 
       &__box {
-
+        width: 1100px;
         &__in {
           float:left;
-          margin-right: 30px;
-
+          margin-left: 5px;
+          margin-right: 25px;
           &__text {
             padding-top: 10px;
             text-align: center;
+            font-size: 12px;
           }
         }
       }
@@ -327,6 +346,75 @@
     }
 
   }
+
+
+  .ranking{
+    width: 1000px;
+    height: 320px;
+    margin: 0 auto;
+//    margin-left: 230px;
+
+    &__rise__project{
+      width: 1000px;
+      height: 50px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+
+    &__project{
+      height: 40px;
+      margin-bottom: 15px;
+      margin-top: 20px;
+
+      &__icon{
+        float: left;
+      }
+
+      &__title{
+        float: left;
+        font-size: 23px;
+      }
+
+      &__box {
+        float: left;
+
+        &__in {
+          float: left;
+          height: 200px;
+          width: 200px;
+
+
+          &__image {
+            border-radius: 3px;
+          }
+
+          &__title {
+            color: #333333;
+            font-size: 16px;
+            line-height: 1.8;
+            float: left;
+            width: 188px;
+            height: 40px;
+            background-color: white;
+          }
+
+          &__text {
+            color: #696969;
+            font-size: 12px;
+            width: 188px;
+            height: 120px;
+            background-color: white;
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+
 
   .article{
     width: 1100px;
